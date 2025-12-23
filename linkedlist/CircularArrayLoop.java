@@ -79,6 +79,39 @@ public class CircularArrayLoop {
             if(visited[i]) continue;
 
             boolean isForward = (nums[i] > 0);
+            int slow = i, fast = i;
+
+            while(true){
+
+                slow = next(nums, slow, n, isForward);
+                if(slow == -1) break;
+
+                fast = next(nums, fast, n, isForward);
+                if(fast == -1) break;
+
+                fast = next(nums, fast, n, isForward);
+                if(fast == -1) break;
+
+                if(slow == fast) return true;
+            }
+
+            int curr = i;
+
+            while(nums[curr] != 0 && (nums[curr] > 0 == isForward)){
+                int next = ((curr + nums[curr]) % n + n) % n;
+                nums[curr] = 0;
+                curr = next;
+            }
         }
+        return false;
+    }
+
+    public int next(int[] nums, int curr, int n, boolean isForward){
+        if((nums[curr] > 0) != isForward) return -1;
+
+        int next = ((curr + nums[curr]) % n + n) % n;
+        if(curr == next) return -1;
+
+        return next;
     }
 }
