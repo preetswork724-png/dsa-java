@@ -53,6 +53,11 @@
  *
  * Notes:
  * - Merging all the intervals is logical as the employees are busy together at that time.
+ *
+ * Mistake log :
+ * - Again assumed that merging two intervals will solve the problem.
+ * - But instead, it is a timeline problem.
+ * - Where each interval affects all the present intervals and not just the adjacent intervals.s
  */
 package intervals;
 import java.util.Arrays;
