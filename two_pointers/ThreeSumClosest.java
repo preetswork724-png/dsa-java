@@ -21,8 +21,20 @@
  * - O(1)
  *
  * Better Approach Intuition:
- * - HashMaps / HashSets don't help much because there is no exact compliment to search for, they do nor prune combinations, do not improve brute force.
- * - Pre-processing tricks like prefix sum, frequency array don't help either.
+ * - Sort the array.
+ * - Fix i and j.
+ * - So, the required becomes target - (sum of the two fixed pairs).
+ * - Now instead of linearly looking for the element which takes O(N) time, binary search for the element.
+ * - Reduce the search space on the basis of how close you get to the target.
+ *
+ * Time Complexity:
+ * - O(N^2 log N)
+ * Space Complexity:
+ * - O(1)
+ *
+ * Why it is still not optimal?
+ * - For every pair of i and j, we have to search for a k such that the sum is closest.
+ * - If the array is sorted, then a 2-pointer approach can be used.
  *
  * Optimal Approach (Used Below):
  * - Sort the array.
