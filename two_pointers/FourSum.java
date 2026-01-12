@@ -20,7 +20,7 @@
  * Time Complexity:
  * - O(N^4)
  * Space Complexity:
- * - O(N)
+ * - O(N^2)
  *
  * Better Approach Intuition:
  * - Fixate two indexes one by one.
@@ -35,7 +35,7 @@
  * Time Complexity:
  * - O(N^3)
  * Space Complexity:
- * - O(N)
+ * - O(N^3)
  *
  * Optimal Approach (Used Below):
  * - Sort the array as it is easy to skip the duplicates.
@@ -44,8 +44,7 @@
  * - Use 2-pointer approach.
  * - Move the right pointer inwards when sum > 0.
  * - Move the left pointer inward when sum < 0.
- * - Shift until left < right.
- *
+ * - Move the pointers until left < right.
  *
  * Time Complexity:
  * - O(N^3)
@@ -53,8 +52,8 @@
  * - O(1)
  *
  * Notes:
- * - Remember to skip the duplicates at the first loop.
- * - Remember to skip duplicates at the second loop.
+ * - Remember to skip the duplicates inside the first loop.
+ * - Remember to skip duplicates inside the second loop.
  * - Remember to skip the duplicates after generating a quadruplet so that the duplicate triplet is not generated.
  */
 package two_pointers;
