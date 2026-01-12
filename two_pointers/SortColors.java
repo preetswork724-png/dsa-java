@@ -36,12 +36,7 @@
  * Optimal Approach (Used Below):
  * - It's a rearrangement problem.
  * - We use pointers in such a way that we should be able to partition the array accordingly.
- * - Mainly, the array should be partitioned like all the zeroes come first, ones in the middle and twos int end.
- *
- * - What to say in questions where the better approach is the optimal one?
- * - HashMaps / HashSets don't help because we are comparing ranges, not values.
- * - We cannot sort the array because that will break the contiguity.
- * - No prefix sum or product because it might overflow.
+ * - Mainly, the array should be partitioned like all the zeroes come first, ones in the middle and twos in the end.
  *
  * Time Complexity:
  * - O(N)
@@ -49,9 +44,7 @@
  * - O(1)
  *
  * Notes:
- * - A window is only valid it's product < k.
- * - Use the left pointer to shrink the window when it becomes invalid.
- * - Use the right pointer to expand the window until it's invalid.
+ * - The algorithm written below is called as the Dutch National Flag Algorithm.
  */
 package two_pointers;
 import java.util.Arrays;
