@@ -10,7 +10,7 @@
  *
  * Brute Force Intuition:
  * - Find the number of nodes in a Linked List i.e the size of the Linked List.
- * - Travel till one less the size.
+ * - Travel till one less the size/2.
  * - Return the middle node.
  *
  * - Why it is inefficient?
@@ -26,10 +26,10 @@
  * - Take a node, make it point to the head.
  * - Update the head in order to traverse the Linked List.
  * - Increment counter in every iteration, update the mid only when the counter points to an odd number.
- * - The algorithm just works like fast & slow pointer ut sounds unnecessarily complex.
+ * - The algorithm just works like fast & slow pointer but sounds unnecessarily complex.
  *
  * - Why it is still not optimal?
- * - Could not be generalises for many problems which require finding the middle node of the Linked List.
+ * - Could not be generalised for many problems which require finding the middle node of the Linked List.
  *
  * Time Complexity:
  * - O(N)
