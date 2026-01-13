@@ -9,7 +9,7 @@
  * <Fast & Slow Pointer>
  *
  * Brute Force Intuition:
- * - From every index, simulate the movement and see if we comeback to the same index.
+ * - From every index, simulate the movement and see if we come back to the same index.
  * - For each index i:
  * - Start from i.
  * - Maintain a visited set local to this start.
@@ -22,7 +22,7 @@
  * - Why it is inefficient?
  * - From each index, you may walk O(n) steps.
  * - Doing this for N indices.
- * - Ypu repeatedly traverse the same paths again and again.
+ * - You repeatedly traverse the same paths again and again.
  *
  * Time Complexity:
  * - O(N^2)
@@ -57,12 +57,12 @@
  * - Direction must be consistent.
  * - No self loops are allowed.
  * - If fast meets slow, valid cycle.
- * - After finishing from ine index, mark all the nodes as death path.
+ * - After finishing from one index, mark all the nodes as dead path.
  *
  * Time Complexity:
  * - O(N)
  * Space Complexity:
- * - O(1)
+ * - O(N)
  *
  * Notes:
  * - All the nodes in the path should be processed as dead nodes but the direction must be the same.
