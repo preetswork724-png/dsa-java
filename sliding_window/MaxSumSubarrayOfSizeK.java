@@ -26,7 +26,7 @@
  * - Precompute prefix sums.
  * - Subarray sum can be calculated in O(1).
  * - Build a prefix sum array such that prefix[i] = prefix[i-1] + arr[i].
- * - For each subarray of size k, sum = prefix[i] - prefix[i-k].
+ * - For each subarray of size k, sum = prefix[i + k - 1] - prefix[i - 1].
  * - Track the maximum.
  *
  * - Why it is still not optimal?
