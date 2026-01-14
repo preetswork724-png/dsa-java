@@ -22,32 +22,15 @@
  * Space Complexity:
  * - O(1)
  *
- * Better Approach Intuition:
- * - Still two loops.
- * - But instead if using Set each time, we maintain frequency counts.
- * - Using a Set works with brute force, because we stop as soon as we find a third fruit.
- * - A set only detects absence / presence of an element.
- * - But in order to implement an optimal approach using frequency counts we need a Map.
- * - As removing from the set means that an element is no longer part of the window but that element might have appeared later.
- *
- * - Why it is still not optimal?
- * - Still not ideal because we keep starting new windows again and again.
- * What to say in questions where the better approach is the optimal one?
- * -
- * Time Complexity:
- * - O(N^2)
- * Space Complexity:
- * - O(1)
- *
  * Optimal Approach (Used Below):
  * - Maintain a window between left and right pointers where the number of zeroes is at most k.
  *
  * - What to say in questions where the better approach is the optimal one?
  * - Prefix sum still needs searching windows.
- * - Shrinking logic without sliding window doesn't help much
+ * - Shrinking logic without sliding window doesn't help much.
  * - You still need to scan almost all windows.
  * - Anything you come up with will still be O(N^2)
- * 
+ *
  * Time Complexity:
  * - O(N)
  * Space Complexity:
