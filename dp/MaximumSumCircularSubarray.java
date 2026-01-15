@@ -45,10 +45,10 @@
  * Time Complexity:
  * - O(N)
  * Space Complexity:
- * - O(N)
+ * - O(1)
  *
  * Optimal Approach (Used Below):
- * - Instead of recomputing the prefix sum array :
+ * - Instead of recomputing the prefix sum:
  * - We track the maximum sum subarray so far.
  * - And the minimum sum subarray so far.
  *
@@ -71,6 +71,8 @@ public class MaximumSumCircularSubarray {
         int totalSum = 0, maxSum = Integer.MIN_VALUE, minSum = Integer.MAX_VALUE, currMin = 0, currMax = 0;
 
         for(int num : nums){
+            totalSum += num;
+
             currMax = Math.max(num, currMax + num);
             maxSum = Math.max(currMax, maxSum);
 
