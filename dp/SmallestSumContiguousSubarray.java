@@ -28,7 +28,7 @@
  * - But the minimum sum can lie anywhere between (0...i).
  * - A subarray's sum is sum of all the elements from left to right.
  * - And talking in terms of prefixSum, it would be sum(l, r) = prefixSum[r] - prefixSum[l-1].
- * - In order to obtain the maximum sum, prefix[r] should be minimum and prefix[l-1] should be maximum.
+ * - In order to obtain the minimum sum, prefix[r] should be minimum and prefix[l-1] should be maximum.
  *
  * - Why it is still not optimal?
  * - We don't need to compute the entire prefix Sum array for finding the minimum sum.
