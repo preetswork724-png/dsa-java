@@ -12,6 +12,13 @@
  * - Try all the subarrays.
  * - Calculate product of all the elements in the array.
  * - Track the maximum product.
+ * - Brute force already considers:
+ * - All start points.
+ * - All end points.
+ * - All sign combinations.
+ * - All prefix & suffix products implicitly.
+ * - So the subarray [i..j] and [j..i] direction doesn't exist. A subarray id unordered in direction.
+ * - We are already covering every contiguous segment.
  *
  * - Why it is inefficient?
  * - Recomputes product repeatedly for some subarrays.
