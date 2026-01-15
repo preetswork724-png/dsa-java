@@ -13,7 +13,7 @@
  * - Calculate the sum and check if it's divisible by k.
  *
  * - Why it is inefficient?
- * - Calculating sum for each element takes O(N) time.
+ * - Calculating sum for each subarray takes O(N) time.
  * - Very slow for large arrays.
  *
  * Time Complexity:
@@ -25,7 +25,7 @@
  * - Use prefix sums so any subarray sum can be computed in O(1) instead of recomputing.
  * - Build the prefix sum array.
  * - Check every pair (i, j) using prefix math.
- * - Removing the innermost summing loop.
+ * - Remove the innermost summing loop.
  *
  * - Why it is still not optimal?
  * - Computing the arrays take extra memory.
@@ -46,6 +46,7 @@
  *
  * Notes:
  * - Handle negative numbers :- (sum % k + k) % k
+ * - % -> wraps. + -> shifts, % -> wraps.
  */
 package prefix_sum;
 
