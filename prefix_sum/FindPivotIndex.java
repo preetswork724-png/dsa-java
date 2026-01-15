@@ -34,7 +34,7 @@
  *
  * Optimal Approach (Used Below):
  * - Just calculate the total sum.
- * - Maintain the leftSum and for each element calculate thr right sum.
+ * - Maintain the leftSum and for each element calculate the right sum.
  * - right sum = total sum - left sum.
  * - Check if they are equal.
  *
@@ -44,14 +44,13 @@
  * - O(1)
  *
  * Notes:
- * - Include the edge case, where the sum of the subarray is O and its frequency is 1.
- * - So that, if there exists a point in the array where prefix Sum equals k, then you need to count the number of subarrays where sum equals 0.
+ * - Remember to subtract the element at the current index before comparing the leftSum and rightSum.
  */
 package prefix_sum;
 
 public class FindPivotIndex {
     public static void main(String[] args) {
-
+        System.out.println(pivotIndex(new int[]{1,7,3,6,5,6}));
     }
 
     public static int pivotIndex(int[] nums) {
