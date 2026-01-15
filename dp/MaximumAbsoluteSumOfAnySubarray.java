@@ -27,18 +27,23 @@
  * - We build a prefix sum [].
  * - The core insight is that the absolute sum flips the negative value.
  * - And the maximum absolute difference can be obtained by taking the difference of maximum sum subarray and minimum sum subarray.
+ * - At any index i :
+ * - Best positive sum ending here : prefix - minPrefix.
+ * - Best negative sum ending here : prefix - maxPrefix.
+ * - Taking absolute value covers both.
+ * - So, the maximum absolute subarray sum is the distance between the current prefix and any previous prefix extreme.
  * - So, we track them and return their difference.
  *
  * - Why it is still not optimal?
- * - Computing the complete prefix sum array requires extra memory while the maximum sum and the minimum sum can be maintained on the go.
+ * - Prefix sum version is still a range-difference approach, which is conceptually between brute force and kadane.
  *
  * Time Complexity:
  * - O(N)
  * Space Complexity:
- * - O(N)
+ * - O(1)
  *
  * Optimal Approach (Used Below):
- * - Instead of recomputing the prefix sum array, we :
+ * - Instead of recomputing the prefix sum, we :
  * - We track the maximum sum subarray so far.
  * - And the minimum sum subarray so far.
  * - Take the maximum of maximum so far and absolute of minimum so far.
