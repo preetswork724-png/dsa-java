@@ -30,10 +30,16 @@
  * - best subarray ending just before i + best subarray ending at index after i.
  * - Compute Kadane's in forward direction for best sum subarray ending just before i.
  * - Compute Kadane's in backward direction for best sum subarray starting just after i.
+ * - Forward Kadane finds complete subarrays.
+ * - Backward Kadane finds partial suffix pieces used as a glue after deletion.
+ * - So, the global max is taken from forward and backward is only a helper.
+ * - But, will the ans have been the same if the global max was taken from backward Kadane?
+ * - Yes, we could update in backward and still get the no-deletion max, but we must use forward for the deletion - combination logic.
+ * - Hence, the algorithm is built around forward and not backward.
  *
  * - Why it is still not optimal?
  * - We don't need to use extra space for computing the best subarray ending just before i and best subarray starting just after i.
- * - Feels like two Kadane's stuck together.
+ * - Feels like two Kadanes stuck together.
  *
  * Time Complexity:
  * - O(N)
@@ -43,7 +49,7 @@
  * Optimal Approach (Used Below):
  * - At every index i there are two possibilities :
  * - Best subarray ending at i without deleting anything.
- * - Best subarray ending at i after already deleting exactly ine element.
+ * - Best subarray ending at i after already deleting exactly one element.
  * - Two ways to delete an element :
  * - Delete current element.
  * - Already deleted before, extend previous.
@@ -58,6 +64,11 @@
  * - oneDel represents the world after deletion.
  * - The transition from noDel to oneDel happens exactly when you decide to delete the current element.
  * - Therefore noDel must always be an option when updating oneDel.
+ * - noDel tracks the best sum if we never delete.
+ * - oneDel tracks the best sum if we delete exactly one element, which could be:
+ * - The current element (using noDel from previous index), or
+ * - some previous harmful element (carried via oneDel + arr[i]).
+ * - So, the “bad element in the middle” is implicitly skipped by the noDel[i-1] option.
  */
 package dp;
 
@@ -67,7 +78,7 @@ public class MaximumSubarraySumWithOneDeletion {
     }
 
     public static int maximumSum(int[] arr) {
-        int n = arr.length, oneDel = Integer.MAX_VALUE/2, noDel = arr[0], ans = arr[0];
+        int n = arr.length, oneDel = Integer.MIN_VALUE/2, noDel = arr[0], ans = arr[0];
 
         for(int i = 1; i < n ; i++){
             oneDel = Math.max(noDel, oneDel + arr[i]);
