@@ -42,7 +42,7 @@
  * - Instead of computing the complete prefixSum[].
  * - At every index, we make a decision whether it is better to extend the previous subarray or start a fresh subarray.
  * - We maintain currSoFar and maxSoFar.
- * - currSoFar : represents the best sum sending at the current index i.
+ * - currSoFar : represents the best sum ending at the current index i.
  * - maxSoFar : represents the maximum sum seen so far.
  *
  * Time Complexity:
