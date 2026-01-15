@@ -14,7 +14,7 @@
  * - Track the maxLen.
  *
  * - Why it is inefficient?
- * - Calculating number of zeroes and equals takes O(N) time.
+ * - Calculating number of zeroes and ones takes O(N) time.
  * - Very slow for large arrays.
  *
  * Time Complexity:
@@ -40,7 +40,7 @@
  * - Now, just like subarray sum equals k, we need to check if the same number of zeroes and ones have occurred previously.
  * - So, we maintain a map.
  * - Calculate the difference of zeroes and ones at each index.
- * - If you have seen the difference key before then compute the length as the current index - previously stored index.
+ * - If you have seen the difference before then compute the length as the current index - previously stored index.
  *
  * Time Complexity:
  * - O(N)
@@ -56,7 +56,7 @@ import java.util.HashMap;
 public class ContiguousArray {
 
     public static void main(String[] args) {
-        System.out.println(findMaxLength(new int[]{0,1}));
+        System.out.println(findMaxLength(new int[]{0,1 }));
     }
 
     public static int findMaxLength(int[] nums) {
