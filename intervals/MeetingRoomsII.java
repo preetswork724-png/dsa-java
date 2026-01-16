@@ -51,7 +51,7 @@
  * - Why sorting doesn't destroy the natural order ?
  * - Let it be a start of the meeting or end of the meeting, both events happen on a timeline.
  * - Therefore, we don't need to sort them by start time.
- * - We just need to check if the meeting has ended or not.
+ * - We just need to check if the meeting has ended or not before another meeting starts.
  */
 package intervals;
 import java.util.Arrays;
@@ -61,24 +61,24 @@ public class MeetingRoomsII {
         System.out.println(minMeetingRooms(new int[]{1, 10, 7}, new int[]{4, 15, 10}));
     }
 
-    public static int minMeetingRooms(int[] start, int[] end) {
-        Arrays.sort(start);
-        Arrays.sort(end);
+        public static int minMeetingRooms(int[] start, int[] end) {
+            Arrays.sort(start);
+            Arrays.sort(end);
 
-        int n = start.length, i = 0, j = 0, rooms = 0, maxRooms = 0;
+            int n = start.length, i = 0, j = 0, rooms = 0, maxRooms = 0;
 
-        while(i < n && j < n){
+            while(i < n && j < n){
 
-            if(start[i] < end[j]){
-                rooms++;
-                maxRooms = Math.max(maxRooms, rooms);
-                i++;
+                if(start[i] < end[j]){
+                    rooms++;
+                    maxRooms = Math.max(maxRooms, rooms);
+                    i++;
+                }
+                else{
+                    rooms--;
+                    j++;
+                }
             }
-            else{
-                rooms--;
-                j++;
-            }
+            return maxRooms;
         }
-        return maxRooms;
-    }
 }
