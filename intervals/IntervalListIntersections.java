@@ -17,7 +17,7 @@
  *
  * - Why it is inefficient?
  * - Too many redundant comparisons.
- * - Very sloe if the list is large.
+ * - Very slow if the list is large.
  *
  * Time Complexity:
  * - O(N * M)
