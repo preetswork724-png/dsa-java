@@ -3,7 +3,7 @@
  * <Longest Repeating Character Replacement>
  *
  * Link:
- * <https://leetcode.com/problems/longest-repeating-character-replacement/description/>
+     * <https://leetcode.com/problems/longest-repeating-character-replacement/description/>
  *
  * Pattern:
  * <Sliding Window>
@@ -45,7 +45,7 @@
  * Time Complexity:
  * - O(N)
  * Space Complexity:
- * - O(K) unique chars int the string which is approximately O(1).
+ * - O(K) unique chars in the string which is approximately O(1).
  *
  * Notes:
  * - The approach is safe even when a window shrinks and the character's frequency is not decremented.
