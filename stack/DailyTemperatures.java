@@ -10,11 +10,11 @@
  *
  * Brute Force Intuition:
  * - For each element, we repeatedly scan the remaining array.
- * - Many comparisons are repeated unnecessarily.
- * - Essentially, we are recomputing "next warmer day" from scratch for every index instead of reusing previous work.
+ * - Find an index where the temperature is greater than the current temperature.
+ * - The difference of the indexes is the number of days you need to wait for the next warmer day.
  *
  * - Why it is inefficient?
- * - Redundantly finding the next greater temperature for eah element.
+ * - Redundantly finding the next greater temperature for each element.
  *
  * Time Complexity:
  * - O(N^2)
