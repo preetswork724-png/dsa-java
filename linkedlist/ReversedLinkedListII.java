@@ -12,7 +12,7 @@
  * - Add a dummy node as it handles the edge cases where left = 1 which means you have to reverse the sublist from the start.
  * - Traverse till the left node.
  * - Store the nodes from left to right in a list.
- * - Take the list which os compatible for storing the nodes and from the last index reverse the links.
+ * - Take the list which is compatible for storing the nodes and from the last index reverse the links.
  * - Reattach head and tail.
  *
  * - Why it is inefficient?
