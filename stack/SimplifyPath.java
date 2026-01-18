@@ -16,7 +16,7 @@
  * - Replace "/./" with "/".
  * - For "/../", find the index of the last "/".
  * - If the last index > 0, then take the part before the last "/" and the part after skipping "/../'.
- * - Update the state as true id any of the above change takes place in that iteration.
+ * - Update the state as true if any of the above change takes place in that iteration.
  * - If no change takes place, then the state does not get updated, and you break out of the loop.
  * - Remove the trailing "/".
  *
@@ -54,12 +54,12 @@
  *
  * Notes:
  * - Inside the stack, we don't need to push everything that we see in the input.
- * - Sometimes, it is better to ignore some characters / elements for the simplicity of teh problem.
+ * - Sometimes, it is better to ignore some characters / elements for the simplicity of the problem.
  *
  * Mistake log :
  * - I thought iterating from right to left is going to benefit me but that was totally unnecessary.
  * - Trying to push everything inside the stack and then writing some condition to pop them correctly.
- * - Didn't spend ,uch time in understanding a problem and tried to derive the stack solution directly.
+ * - Didn't spend much time in understanding a problem and tried to derive the stack solution directly.
  * - Should strictly stick to brute -> better -> optimal strategy.
  */
 package stack;
