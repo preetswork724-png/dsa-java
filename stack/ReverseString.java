@@ -47,7 +47,6 @@
  * Notes:
  * - reverse() of StringBuilder reverses the string in-place.
  */
-
 package stack;
 
 import java.util.Arrays;
