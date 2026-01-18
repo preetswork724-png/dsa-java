@@ -64,7 +64,7 @@ public class NextGreaterElementI {
             eleIdx.put(nums2[i], i);
         }
 
-        // 2. Find next greater element for each element io nums[2]
+        // 2. Find next greater element for each element io nums2
 
         int[] nextGreater = nextGreat(nums2, m);
 
