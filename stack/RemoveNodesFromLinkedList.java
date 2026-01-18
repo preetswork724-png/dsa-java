@@ -12,8 +12,7 @@
  * - Maintain a list to store all the nodes.
  * - For every node, find the next greater node to it.
  * - If you find the next greater node then simply don't store that node.
- * - If you don't store that node.
- * - Form a new list out of those nodes and return its head.
+ * - Form a new linked list out of those nodes and return its head.
  *
  * - Why it is inefficient?
  * - Redundantly finding the next greater node for each node.
