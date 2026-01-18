@@ -15,7 +15,7 @@
  *
  * - Why it is inefficient?
  * - Requires additional space and is slower.
- * - Instead of reversing the list, we are rebuilding a new list.
+ * - Instead of reversing the list, we are building a new list.
  *
  * Time Complexity:
  * - O(N)
@@ -25,7 +25,7 @@
  * Better Approach Intuition:
  * - Recursively reverse the pointers from the tail.
  * - Traverse till the end of the linked list.
- * - The actual reversal starts from the second lastt node.
+ * - The actual reversal starts from the second last node.
  *
  * - Why it is still not optimal?
  * - Uses extra space.
