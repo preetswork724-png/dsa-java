@@ -23,7 +23,7 @@
  *
  * Better Approach Intuition:
  * - Precompute prefix sums.
- * - Perform binary search on the perfix array.
+ * - Perform binary search on the prefix array.
  *
  * - Why it is still not optimal?
  * - We only need previous sums, not the entire prefix array.
