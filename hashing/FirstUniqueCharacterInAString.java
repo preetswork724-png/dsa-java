@@ -36,7 +36,7 @@
  * - Slower constants than array.
  *
  * Optimal Approach (used below):
- * - The inout consists of ony lowercase English letters, therefore we can replace a map with a fixed-size array and achieve it in O(1) space.
+ * - The input consists of only lowercase English letters, therefore we can replace a map with a fixed-size array and achieve it in O(1) space.
  *
  * Time Complexity:
  * - O(N)
