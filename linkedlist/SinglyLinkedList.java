@@ -124,7 +124,7 @@ public class SinglyLinkedList {
        }
 
        curr.next = curr.next.next;
-       size--;s
+       size--;
     }
 
     // 6. Delete node without head or position (it is guaranteed that the node is not the last node in the linked list)
