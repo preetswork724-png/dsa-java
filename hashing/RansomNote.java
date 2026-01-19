@@ -9,7 +9,7 @@
  * <Frequency>
  *
  * Brute Force Intuition:
- * - Check if each character of the ransom note occurs exactly the same time in magazine.
+ * - Check if each character of the ransom note occurs exactly the same times in magazine.
  *
  * - Why it is inefficient?
  * - Comparing the characters in the magazine string for every character in ransom note is quiet inefficient.
