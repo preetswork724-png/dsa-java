@@ -26,7 +26,8 @@
  *
  * Better Approach Intuition:
  * - Compute the frequency of characters in "balloon".
- * - Compute the frequency of characters in inout string.
+ * - Compute the frequency of characters in input string.
+ * - Try tp repeatedly consume one balloon.
  * - Iterate over the map / freq[] of balloon :
  * - Try to form balloon by iterating over the freq[] / map of input string.
  * - Subtract the frequencies.
@@ -37,7 +38,7 @@
  * - O(N)
  *
  * Why this is still not optimal?
- * - We are simulating the construction of "balloon" pne by one.
+ * - We are simulating the construction of "balloon" one by one.
  * - The loop runs as many times as say k.
  * - So, the real complexity becomes :
  * - O(K * |balloons|)
