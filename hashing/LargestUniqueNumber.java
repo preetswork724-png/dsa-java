@@ -9,8 +9,8 @@
  * <Frequency count>
  *
  * Brute Force Intuition:
- * - For all the numbers in the array, count the occurrence of each number.
- * - If the number of occurrence is 1 then update the maximum.
+ * - For all the numbers in the array, count the frequency of each number.
+ * - For numbers whose frequency is 1, track the maximum number.
  *
  * - Why it is inefficient?
  * - Rescans the whole array for every single number.
@@ -44,7 +44,7 @@
  * - O(1)
  *
  * Notes:
- * - Frequency problems -> HashMap first, then optimize to array is constraints are small.
+ * - Frequency problems -> HashMap first, then optimize to array if constraints are small.
  */
 package hashing;
 
