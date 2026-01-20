@@ -37,7 +37,7 @@
  * Optimal Approach (Used Below):
  * - Keep 2 pointers i.e slow and fast.
  * - The fast one keeps on scanning the array and moves in each iteration.
- * - The slow one only moves when all the duplicate elemen
+ * - The slow one only moves when all the duplicate element.
  * - right -> points to the first misplaced zero.
  * - Everything before left is zero.
  * - Everything after right is one.
