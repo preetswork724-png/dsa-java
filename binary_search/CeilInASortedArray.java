@@ -9,7 +9,7 @@
  * <Core Binary Search>
  *
  * Brute Force Intuition:
- * - Linearly traverse the array and check for the smallest greater element than x.
+ * - Linearly traverse the array and check for the smallest greater element than or equal to x.
  *
  * - Why it is inefficient?
  * - Brute force requires O(N) time to find the ceil for a single value.
@@ -24,6 +24,10 @@
  * Better and Optimal Approach (Used Below):
  * - Since the array is sorted, apply Binary search to directly locate the ceil.
  * - Maintain a candidate answer and shrink the search space accordingly.
+ * - If the element at the middle is greater than x, store the potential candidate and try to minimize the answer.
+ * - Therefore, shrink from right.
+ * - If the element at the middle is lesser than x, then all the elements to the left will always be smaller.
+ * - Therefore, shrink from left.
  *
  * Time Complexity:
  * - O(log N)
