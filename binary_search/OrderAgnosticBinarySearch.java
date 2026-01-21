@@ -27,6 +27,12 @@
  * - If the first element is greater than the last element : if (target > arr[mid]) end = mid - 1, else start = mid + 1.
  * - In the end, if the target matches with the middle element then the element which was given to search is found.
  *
+ * Why better approach is the optimal one?
+ * - The array is sorted, so any comparison-based search for an element has a lower bound of Ω(log N).
+ * - Binary Search achieves this bound by eliminating half of the search space at every step.
+ * - Each element is considered at most once in the decision path, and no linear scan is required.
+ * - Therefore, the time complexity is O(log N), which matches the theoretical lower bound for searching in a sorted array, making this approach optimal.
+ *
  * Time Complexity:
  * - O(log N)
  * Space Complexity:
