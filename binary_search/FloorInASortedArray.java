@@ -29,6 +29,12 @@
  * - If the element at the middle is lesser than or equal to x, store the potential candidate and try to maximize the answer.
  * - Therefore, shrink from left.
  *
+ * Why better approach is the optimal one?
+ * - The array is sorted, so any comparison-based search for a boundary element (ceil/floor) has a lower bound of Ω(log N).
+ * - Binary Search achieves this bound by eliminating half of the search space at every step.
+ * - Each element is considered at most once in the decision path, and no linear scan is required.
+ * - Therefore, the time complexity is O(log N), which matches the theoretical lower bound for searching in a sorted array, making this approach optimal.
+ *
  * Time Complexity:
  * - O(log N)
  * Space Complexity:
