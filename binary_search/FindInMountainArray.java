@@ -83,65 +83,43 @@ public class FindInMountainArray {
 
     public int findInMountainArray(int target, MountainArray mountainArr) {
 
-        int pivotIndex = findPeak(mountainArr);
+        int peak = findPeak(mountainArr);
 
-        if(mountainArr.get(pivotIndex) == target) return pivotIndex;
+        int left = binarySearch(mountainArr, 0, peak, target, true);
+        if (left != -1) return left;
 
-        int left = orderAgnosticBinSearch(target, mountainArr, 0, pivotIndex - 1);
-        int right = orderAgnosticBinSearch(target, mountainArr, pivotIndex + 1, mountainArr.length()-1);
-
-        if(left == -1) return right;
-        else if(right == -1) return left;
-        else return left;
+        return binarySearch(mountainArr, peak + 1, mountainArr.length() - 1, target, false);
     }
 
-    public int orderAgnosticBinSearch(int target, MountainArray mountainArr, int low, int high){
+    public int binarySearch(MountainArray arr, int l, int r, int target, boolean asc) {
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            int midVal = arr.get(mid);
 
-        boolean isAsc = mountainArr.get(low) <= mountainArr.get(high);
+            if (midVal == target) return mid;
 
-        while(low <= high){
-
-            int mid = low + (high - low) / 2;
-
-            if(mountainArr.get(mid) == target) return mid;
-
-            if(isAsc){
-
-                if(mountainArr.get(mid) < target){
-                    low = mid + 1;
-                }
-                else{
-                    high = mid - 1;
-                }
-
-            }
-            else{
-
-                if(mountainArr.get(mid) < target){
-                    high = mid - 1;
-                }
-                else{
-                    low = mid + 1;
-                }
+            if (asc) {
+                if (midVal < target) l = mid + 1;
+                else r = mid - 1;
+            } else {
+                if (midVal > target) l = mid + 1;
+                else r = mid - 1;
             }
         }
         return -1;
     }
 
-    public int findPeak(MountainArray mountainArr){
-        int n = mountainArr.length(), low = 0, high = n - 1, ans = -1;
+    public int findPeak(MountainArray arr) {
+        int l = 0, r = arr.length() - 1;
 
-        while(low <= high){
-            int mid = low + (high - low) / 2;
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            int midVal = arr.get(mid);
+            int nextVal = arr.get(mid + 1);
 
-            if(mid + 1 < n && mountainArr.get(mid) > mountainArr.get(mid + 1)){
-                ans = mid;
-                high = mid - 1;
-            }
-            else{
-                low = mid + 1;
-            }
+            if (midVal > nextVal) r = mid;
+            else l = mid + 1;
         }
-        return ans;
+        return l;
     }
 }
