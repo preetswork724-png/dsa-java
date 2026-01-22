@@ -6,7 +6,7 @@
  * <https://leetcode.com/problems/search-a-2d-matrix/description/>
  *
  * Pattern:
- * <2D matrix>
+ * <binary search on matrix>
  *
  * Brute Force Intuition:
  * - Linearly pick the row.
@@ -51,7 +51,7 @@
  *
  * Notes:
  * - Asymptotically, the time complexities for both the better and optimal approach are equal.
- * - There is no Big-O difference.
+ * - There is no Big-OSearch a 2D Matrix difference.
  * - The flattened 1D binary search performs a single logarithmic search over teh entire matrix, making the algorithm conceptually simpler.
  * - Smaller constant factors as compared to the two-phase binary search.
  */
