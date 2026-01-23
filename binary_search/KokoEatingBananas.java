@@ -39,11 +39,6 @@
  * - The decision function canEat(k) is strictly monotonic.
  * - The only principled way to reduce a monotonic integer range is binary search.
  *
- * Time Complexity:
- * - O(N log M) {where M =  max(bloomDay)}
- * Space Complexity:
- * - O(1)
- *
  * Notes:
  * - Whenever:
  * - You are summing divisions.
