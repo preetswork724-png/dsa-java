@@ -44,6 +44,10 @@
  * Space Complexity:
  * - O(1)
  *
+ * Why better approach is the optimal one?
+ * - Because we need to traverse each element in the matrix at least once.
+ * - This is already done in-place with smart boundary shrinking.
+ *
  * Notes:
  * - In each iteration of the outer loop, after updating a pair of boundaries,
  * - Always verify that the remaining boundaries are still valid before traversing them.
