@@ -42,7 +42,7 @@
  * - O(N log N)
  * Space Complexity:
  * - O(N)
- * 
+ *
  * Why better approach is the optimal one?
  * - The problem is equivalent to:
  * - Scheduling tasks before deadline and the optimal strategy for such problems is to always assign the earliest possible available resource.
@@ -55,6 +55,18 @@
  * - This is a successor query.
  * - Deque only supports pop front, pop back and peek front / back.
  * - It does not support first element greater than X without scanning -> O(N).
+ * - Why is it necessary to have a placeholder (ans[i])?
+ * - If rains[i] > 0 -> ans[i] = -1.
+ * - If rains[i] == 0 -> ans[i] = lake number you choose to dry on day i.
+ * - So on a dry day, ans[i] must contain some lake number.
+ * - Why not leave it unfilled and assign later?
+ * - Because not every dry day will actually be used to prevent a flood.
+ * - For example:
+ * - rains = [1, 2, 0, 3]
+ * - Dry day at index 2 might never be needed by any lake, still the array must contain a valid value at index 2.
+ * - If you chose to dry an empty lake, nothing changes.
+ * - So on unused dry days, you are allowed to dry any arbitrary lake (even if it's already empty). That's why people usually put: ans[i] = 1.
+ * - If no lake needs this dry day, we'll pretend that we dried lake 1.
  *
  * Mistake log:
  * - Tried to use the first dry day seen.
@@ -81,6 +93,7 @@ public class AvoidFloodInTheCity {
 
             if(lake == 0){
                 dryDays.add(i);
+                ans[i] = 1;
             }
             else{
                 if(lastRainDay.containsKey(lake)){
