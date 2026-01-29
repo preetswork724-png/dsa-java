@@ -26,7 +26,7 @@
  * Space Complexity:
  * - O(n^2)
  *
- * Better an Optimal Approach (Used below):
+ * Better and Optimal Approach (Used below):
  * - Make use of 4 pointers, where each pointer denotes a boundary.
  * - Move the boundary or update the pointers as soon as a position is allocated with a num.
  * - Repeat the process until the boundary becomes invalid.
@@ -35,10 +35,6 @@
  * - O(n^2)
  * Space Complexity:
  * - O(n^2) {output}, O(1) {auxiliary}
- *
- * Why better approach is the optimal one?
- * - Because we need to traverse each element in the matrix at least once.
- * - This is already done in-place with smart boundary shrinking.
  *
  * Notes:
  * - In each iteration of the outer loop, after updating a pair of boundaries,
