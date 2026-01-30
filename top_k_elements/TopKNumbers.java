@@ -41,13 +41,13 @@
  * - This ensures that after the traversal of the complete array, only the K largest elements remain in the heap.
  *
  * Time Complexity:
- * - O(K log K)
+ * - O(N log K)
  * Space Complexity:
  * - O(K)
  *
  * Notes:
  * - log K is far better than log N.
- * - If K < N, always sue a minHeap of size k to keep track of all the largest numbers efficiently.
+ * - If K < N, always use a minHeap of size k to keep track of all the largest numbers efficiently.
  * - Heap does not guarantee sorted order. it guarantees the correct elements.
  * - If sorted output is required, sort the final k elements.
  */
