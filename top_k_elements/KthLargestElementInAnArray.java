@@ -19,7 +19,7 @@
  * Time Complexity:
  * - O(N log N)
  * Space Complexity:
- * - O(1)
+ * - O(log N) {Java implementation dependent}
  *
  * Better Approach Intuition:
  * - Maintain a maxHeap.
@@ -28,7 +28,7 @@
  * - poll() and return the kth element.
  *
  * Time Complexity:
- * - O(N + K log N)
+ * - O(N log N) {Insert N elements one by one, heapify takes O(N)}
  * Space Complexity:
  * - O(N)
  *
