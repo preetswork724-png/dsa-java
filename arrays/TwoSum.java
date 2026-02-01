@@ -14,7 +14,7 @@
  * - Return indices when a match is found.
  *
  * - Why it is inefficient?
- * - While the approach is valid, it is still very low for large arrays which might exceed the time limit.
+ * - While the approach is valid, it is still very slow for large arrays which might exceed the time limit.
  *
  * Time Complexity:
  * - O(N^2)
