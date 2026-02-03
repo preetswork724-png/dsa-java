@@ -58,7 +58,7 @@
 package two_pointers;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;    
+import java.util.Arrays;
 public class ThreeSum {
 
     public static void main(String[] args) {
@@ -104,5 +104,4 @@ public class ThreeSum {
         }
         return res;
     }
-
 }
