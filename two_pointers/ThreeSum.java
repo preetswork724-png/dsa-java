@@ -20,7 +20,7 @@
  * Time Complexity:
  * - O(N^3)
  * Space Complexity:
- * - O(N)
+ * - O(N^3)
  *
  * Better Approach Intuition:
  * - Fixate one index and make it as target.
@@ -35,16 +35,15 @@
  * Time Complexity:
  * - O(N^2)
  * Space Complexity:
- * - O(N)
+ * - O(N^3)
  *
  * Optimal Approach (Used Below):
  * - Sort the array as it is easy to skip the duplicates.
  * - Fixate one value at the index i.
  * - Use 2-pointer approach.
  * - Move the right pointer inwards when sum > 0.
- * - Move the left pointer inward when sum < 0.
+ * - Move the left pointer inwards when sum < 0.
  * - Shift until left < right.
- *
  *
  * Time Complexity:
  * - O(N^2)
