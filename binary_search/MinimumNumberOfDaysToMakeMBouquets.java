@@ -54,7 +54,7 @@
  *
  * Notes:
  * - Edge case:
- * - If the length of the array / number of flowers < number of bouquets * flowers per bouquet then you will never able to make m bouquets from k consecutive flowers.
+ * - If the length of the array / number of flowers < number of bouquets * flowers per bouquet then you will never be able to make m bouquets from k consecutive flowers.
  */
 package binary_search;
 
