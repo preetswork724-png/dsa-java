@@ -41,10 +41,6 @@
  * - Fixate at one index
  * - Find the pair's sum using 2-pointer.
  *
- * - What to say in questions where the better approach is the optimal one?
- * - HashSet-based approaches don’t help because the problem does not involve exact matching.
- * - It gives you control over pointer movement to move closer to the target.
- *
  * Time Complexity:
  * - O(N^2)
  * Space Complexity:
