@@ -44,7 +44,7 @@
 package linkedlist;
 
 public class SubtractionInLinkedList {
-    
+
     static Node subLinkedList(Node head1, Node head2) {
 
         if(isSmaller(head1, head2)){
