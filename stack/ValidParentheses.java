@@ -27,7 +27,7 @@
  * Space Complexity:
  * - O(N)
  *
- * Better and Optimal Approach ( Used Below ):
+ * Better Approach:
  * - Push the opening brackets above each other.
  * - Whenever you get a closing bracket, check the most recent opening bracket.
  * - If they are a valid pair, pop.
@@ -38,9 +38,16 @@
  * Space Complexity:
  * - O(N)
  *
- * Why the better approach is the optimal one ?
- * - We must track the unsolved opening bracket, and stack does this in O(1) per operation and O(N) time and O(N) space.
- * - This is the best theoretical best possible since we must read every character and may need to store N opens.
+ * Why it is still not optimal?
+ * - The above approach is already optimal but as Stacks are synchronized they are slow.
+ *
+ * Optimal Approach (used below):
+ * Use StringBuilder as Stack.
+ *
+ * Time Complexity:
+ * - O(N)
+ * Space Complexity:
+ * - O(N)
  *
  * Notes:
  * - At the end, if the stack is not empty then :
@@ -59,45 +66,43 @@ public class ValidParentheses {
 
     public static boolean isValid(String s) {
 
-        if(s.length() == 1) return false;
+        if (s.length() == 1) return false;
 
-        Stack<Character> stack = new Stack<>();
+        StringBuilder stack = new StringBuilder();
 
-        for(char ch : s.toCharArray()){
+        for (char ch : s.toCharArray()) {
 
-            if(ch == '(' || ch == '[' || ch == '{'){
-                stack.push(ch);
-            }
-            else{
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack.append(ch);
+            } else {
 
-                if(stack.isEmpty()) return false;
+                int len = stack.length();
 
-                if(ch == ')'){
+                if (stack.isEmpty()) return false;
 
-                    if(stack.peek() == '('){
-                        stack.pop();
-                    }
-                    else{
+                if (ch == ')') {
+
+                    if (stack.charAt(len - 1) == '(') {
+                        stack.deleteCharAt(len - 1);
+                    } else {
                         return false;
                     }
                 }
 
-                if(ch == ']'){
+                if (ch == ']') {
 
-                    if(stack.peek() == '['){
-                        stack.pop();
-                    }
-                    else{
+                    if (stack.charAt(len - 1) == '[') {
+                        stack.deleteCharAt(len - 1);
+                    } else {
                         return false;
                     }
                 }
 
-                if(ch == '}'){
+                if (ch == '}') {
 
-                    if(stack.peek() == '{'){
-                        stack.pop();
-                    }
-                    else{
+                    if (stack.charAt(len - 1) == '{') {
+                        stack.deleteCharAt(len - 1);
+                    } else {
                         return false;
                     }
                 }
