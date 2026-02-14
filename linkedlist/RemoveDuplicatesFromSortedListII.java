@@ -33,7 +33,7 @@
  * - O(N)
  *
  * Optimal Approach (Used Below):
- * - If the node's value is equal to its next node, then skip the node in between.
+ * - If the node's value is equal to its next node, then skip all the node in between.
  * - Only update the node, after skipping all the adjacent nodes.
  *
  * Time Complexity:
