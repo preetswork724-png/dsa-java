@@ -20,17 +20,17 @@
  * Time Complexity:
  * - O(N^4)
  * Space Complexity:
- * - O(N^2)
+ * - O(N^3)
  *
  * Better Approach Intuition:
  * - Fixate two indexes one by one.
- * - Now the remaining problem simulates like a two sum where you need to find the target = -(nums[i] + nums[j] + nums[k] + nums[l])
+ * - Now the remaining problem simulates like a two sum where you need to find the target = -(nums[i] + nums[j] + nums[k])
  * - Use a HashSet to check for the needed in O(1)
  *
  * - Why it is still not optimal.
  * - Skipping duplicates is not clean and efficient as the array is not yet sorted.
  * - However, the time complexity is reduced but the space complexity remains the same.
- * - Needs to maintain a Set<List<Integer>> to store the unique triplets.
+ * - Needs to maintain a Set<List<Integer>> to store the unique quadruplets.
  *
  * Time Complexity:
  * - O(N^3)
@@ -54,7 +54,7 @@
  * Notes:
  * - Remember to skip the duplicates inside the first loop.
  * - Remember to skip duplicates inside the second loop.
- * - Remember to skip the duplicates after generating a quadruplet so that the duplicate triplet is not generated.
+ * - Remember to skip the duplicates after generating a quadruplet so that the duplicate quadruplet is not generated.
  */
 package two_pointers;
 import java.util.Arrays;
