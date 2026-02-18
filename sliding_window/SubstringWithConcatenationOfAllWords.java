@@ -11,7 +11,7 @@
  * Brute Force Intuition:
  * - For every possible starting index :
  * - Try all the substrings of total len (len of word * number of words).
- * - Split the substring into k chunks os len of word.
+ * - Split the substring into k chunks of len of word.
  * - Check whether the chunk list is a permutation of the words.
  * - To check permutations, use hashmap frequency comparison or sorting.
  *
@@ -57,11 +57,11 @@
  *
  * Notes:
  * - For each offset from len 0 to wordLen - 1 :
- * - Maintain left pointer, current window HashMap, number if valid matched words.
+ * - Maintain left pointer, current window HashMap, number of valid matched words.
  * - Move right pointer:
  * - read word = s[right : right + wordLen]
- * - if not in target → clear window, move left , else:
- * - add to window
+ * - if not in target → clear window, move left.
+ * - else: add to window
  * - if frequency exceeds required → shrink from left until valid
  * - if window has exactly k words → record index
  */
