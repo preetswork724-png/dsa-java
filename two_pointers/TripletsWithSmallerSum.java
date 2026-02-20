@@ -21,18 +21,25 @@
  * - O(1)
  *
  * Better Approach Intuition:
- * - HashMaps / HashSets don't help much because there is no exact compliment to search for, they do not prune combinations, do not improve brute force.
- * - Pre-processing tricks like prefix sum, frequency array don't help either.
+ * - Sort the array.
+ * - Fixate two indexes such that the remaining sum = target - (arr[i] + arr[j]).
+ * - Now instead of searching for the index linearly, use binary search.
+ * - Find the rightmost index k such that the sum till that index will always be lesser than target.
+ * - Add rightmost index - previous index to the count
+ *
+ * Time Complexity:
+ * - O(N^2 log N)
+ * Space Complexity:
+ * - O(1)
+ *
+ * Why it is still not optimal?
+ * - Searching for the right most index takes O(log N) time everytime.
+ * - As the array is sorted, the above can be reduced using 2-pointer method.
  *
  * Optimal Approach (Used Below):
  * - Sort the array.
  * - Fixate at one index
  * - Find the pair's sum using 2-pointer.
- *
- * - What to say in questions where the better approach is the optimal one?
- * - HashSet-based approaches don’t help because the problem does not involve exact matching.
- * - It gives you control over pointer movement to move closer to the target.
- * -
  *
  * Time Complexity:
  * - O(N^2)
