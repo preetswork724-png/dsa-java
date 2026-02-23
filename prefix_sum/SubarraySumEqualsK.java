@@ -29,7 +29,7 @@
  * - Because, prev + curr = k. Then, prev = curr - k.
  * - Then there exists two points (i..j) in the array such that the subarray sum between them equals k.
  * - Increment the count by the number of such subarrays.
- * -
+ *
  * - What to say in questions where the better approach is the optimal one?
  * - In this problem, the better approach is the optimal one.
  * - Because we reduced O(N) sum query time to O(1).
