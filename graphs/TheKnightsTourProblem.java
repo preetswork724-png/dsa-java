@@ -66,7 +66,7 @@ public class TheKnightsTourProblem {
             {1, 2}, {1, -2}, {-1, 2}, {-1, -2}};
 
     public static void main(String[] args) {
-        System.out.println();
+        System.out.println(knightTour(5));
     }
 
     public static ArrayList<ArrayList<Integer>> knightTour(int n) {
