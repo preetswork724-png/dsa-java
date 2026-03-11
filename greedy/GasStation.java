@@ -36,7 +36,7 @@
  *
  * Optimal Approach (Used below):
  * - Imagine walking around a circle:
- * - If at some point you run iut of gas,
+ * - If at some point you run out of gas,
  * - That means the entire stretch that you just walked could not have a valid starting position.
  * - So, you jump ahead.
  * - Lets say you begin at start, and you run out of gas at some i:
