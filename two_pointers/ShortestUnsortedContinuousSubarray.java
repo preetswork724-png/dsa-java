@@ -12,11 +12,11 @@
  * - Try every possible subarray.
  * - Create a clone of the array.
  * - Sort in that range.
- * - Check is it sorts the array
+ * - Check if it sorts the array.
  * - Track the minimum continuous subarray.
  *
  * - Why it is inefficient?
- * - Generating all teh subarray is not at all optimal.
+ * - Generating all the subarrays is not at all optimal.
  * - Sorting and checking makes the entire process completely inefficient.
  *
  * Time Complexity:
