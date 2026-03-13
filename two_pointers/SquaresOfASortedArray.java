@@ -3,7 +3,7 @@
  * <Squares of a Sorted Array>
  *
  * Link:
- * <https://leetcode.com/problems/squares-of-a-sorted-array/description//>
+ * <https://leetcode.com/problems/squares-of-a-sorted-array/description/>
  *
  * Pattern:
  * <Two Pointer>
