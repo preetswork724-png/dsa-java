@@ -33,7 +33,7 @@
  * - Needs to maintain a Set<List<Integer>> to store the unique triplets.
  *
  * Time Complexity:
- * - O(N^2)
+ * - O(N^2 * Log N)
  * Space Complexity:
  * - O(N^3)
  *
