@@ -34,7 +34,7 @@
  * Space Complexity:
  * - O(r * c)
  *
- * Better an Optimal Approach (Used below):
+ * Better and Optimal Approach (Used below):
  * - Make use of 4 pointers, where each pointer denotes a boundary.
  * - Move the boundary or update the pointers as soon as a boundary is printed or all the boundary elements are added to the list.
  * - Repeat the process until the boundary becomes invalid.
