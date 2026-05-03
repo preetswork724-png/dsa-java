@@ -30,7 +30,7 @@
  * - If we can fit within x pages using ≤ k students, then we can always adjust to use exactly k students.
  *
  * Time Complexity:
- * - O(N * (sum - max(arr)))
+ * - O(N * (sum - min(arr)))
  * Space Complexity:
  * - O(1)
  *
