@@ -6,8 +6,7 @@
  * <https://leetcode.com/problems/multiply-strings/>
  *
  * Pattern:
- * <String Manipulation / Simulation / Math (Grade-School Multiplication)>
- *
+ * <String Manipulation / Simulation>
  *
  * Brute Force Intuition:
  * - Convert both strings into numeric types (int / long).
