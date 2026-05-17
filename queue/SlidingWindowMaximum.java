@@ -20,13 +20,19 @@
  * - O(1)
  *
  * Better Approach intuition:
- * - Use MaxHeap of size k.
- * - Iterate over the first window:
- * - Put nums[i], i inside the heap.
- * - Compute the maximum in that window.
- * - Now, slide the window.
- * - Remove all the elements out of the heap which are not a part of the window.
- * - Store the peek element of the heap inside the res array.
+ * - Use MaxHeap storing:
+ *     {nums[i], index}
+ *
+ * - Iterate over the array:
+ * - Add current element into heap.
+ *
+ * - Remove stale elements from heap top:
+ *     indices outside current window.
+ *
+ * - Once window size becomes k:
+ * - Heap top gives maximum element.
+ *
+ * - Store heap.peek() into result
  *
  * Time Complexity:
  * - O(N log K)
@@ -34,8 +40,9 @@
  * - O(N)
  *
  * Why this is still not optimal?
- * - We are still using log K operations.
- * - We are not fully exploiting window structure.
+ * - Heap operations still take O(log K).
+ * - Heap does not fully exploit sliding-window structure.
+ * - Many smaller elements remain in heap even though they can never become maximum.
  *
  * Optimal Approach (Used below):
  * - Monotonic Deque.
