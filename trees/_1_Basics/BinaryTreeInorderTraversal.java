@@ -26,7 +26,7 @@
  * - O(N)
  *
  * Space Complexity:
- * - O(N)
+ * - O(H) {H = Height of the tree (At any path, recursion stack only stores nodes from root to leaf)}
  */
 package trees._1_Basics;
 
