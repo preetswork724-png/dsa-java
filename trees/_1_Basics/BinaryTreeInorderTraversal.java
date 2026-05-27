@@ -32,6 +32,7 @@ package trees._1_Basics;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
@@ -47,5 +48,24 @@ public class BinaryTreeInorderTraversal {
         inorder(node.left, res);
         res.add(node.val);
         inorder(node.right, res);
+    }
+
+    public List<Integer> inorderTraversalIterative(TreeNode root) {
+        List<Integer> inorder = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+
+        while(curr != null || !stack.isEmpty()){
+
+            while(curr != null){
+                stack.push(curr);
+                curr = curr.left;
+            }
+
+            curr = stack.pop();
+            inorder.add(curr.val);
+            curr = curr.right;
+        }
+        return inorder;
     }
 }
