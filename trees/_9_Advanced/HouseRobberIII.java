@@ -50,7 +50,7 @@
  *      - Compute left[] and right[] results.
  *  3. Compute:
  *      - rob = node.val + left[1] + right[1].
- *      - notRob = max(left[0], left[1]) + max(right[0] + right[1]).
+ *      - notRob = max(left[0], left[1]) + max(right[0] , right[1]).
  *  4. Return pair [rob, notRob].
  *  5. Final answer:
  *     max(result[0], result[1]).
