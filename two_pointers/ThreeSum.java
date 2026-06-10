@@ -20,7 +20,7 @@
  * Time Complexity:
  * - O(N^3)
  * Space Complexity:
- * - O(N^3)
+ * - O(N^2)
  *
  * Better Approach Intuition:
  * - Fixate one index and make it as target.
@@ -33,9 +33,9 @@
  * - Needs to maintain a Set<List<Integer>> to store the unique triplets.
  *
  * Time Complexity:
- * - O(N^2 * Log N)
+ * - O(N^2)
  * Space Complexity:
- * - O(N^3)
+ * - O(N^2)
  *
  * Optimal Approach (Used Below):
  * - Sort the array as it is easy to skip the duplicates.
