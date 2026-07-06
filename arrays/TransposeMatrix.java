@@ -38,9 +38,9 @@
  * - So, the current brute force solution is already optimal.
  *
  * Time Complexity:
- * - O(n^2)
+ * - O(m * n)
  * Space Complexity:
- * - O(1)
+ * - O(m * n)
  *
  * Notes:
  * - If it is a square matrix, in-place transpose is the optimal solution.
