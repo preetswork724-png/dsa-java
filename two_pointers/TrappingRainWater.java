@@ -9,7 +9,7 @@
  * <Two pointer>
  *
  * Brute Force Intuition:
- * - Water trapping requires both the left boundary and thr right boundary.
+ * - Water trapping requires both the left boundary and the right boundary.
  * - And water trapped always depends on the smaller of the two boundaries.
  * - For every index:
  * - Scan left to find maxLeft.
