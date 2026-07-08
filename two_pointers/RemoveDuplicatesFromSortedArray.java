@@ -38,11 +38,6 @@
  * - Keep 2 pointers i.e slow and fast.
  * - The fast one keeps on scanning the array and moves in each iteration.
  * - The slow one only moves when all the duplicate element.
- * - right -> points to the first misplaced zero.
- * - Everything before left is zero.
- * - Everything after right is one.
- * - Swap and then move the pointers again.
- * - This continues until the pointers cross, ensuring all 0s are on the left and all 1s are on the right.
  *
  * Time Complexity:
  * - O(N)
