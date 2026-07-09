@@ -22,7 +22,6 @@
  * Space Complexity:
  * - O(N)
  *
- *
  * Better Approach Intuition:
  * - Perform inorder traversal → sorted array.
  * - Use binary search to find:
@@ -39,7 +38,6 @@
  * - O(N)
  * Space Complexity:
  * - O(N)
- *
  *
  * Optimal Approach (Used Below):
  * - Use BST property:
@@ -67,7 +65,6 @@
  *            - Move right (try larger valid value)
  *
  *   - 3. Return floor
- *
  *
  * - Why this works?
  * - BST eliminates half search space each step.
