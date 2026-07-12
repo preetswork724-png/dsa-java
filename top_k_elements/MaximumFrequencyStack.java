@@ -61,7 +61,7 @@
  * - Track the maxFreq globally.
  * - push():
  * - Update the frequency of the element and track the maxFreq.
- * - Add that element to the elements stored to that corresponding frequency, if no elements are stored, then out that element and a new Stack corresponding to it in the map.
+ * - Add that element to the elements stored to that corresponding frequency, if no elements are stored, then pop out that element and a new Stack corresponding to it in the map.
  * - pop():
  * - Pop out the most frequent and the recent one.
  * - Fetch the maxFreq and pop out the most recent element stored corresponding to that frequency.
