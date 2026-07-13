@@ -39,14 +39,14 @@
  * - Expand (i, i) for odd palindromes.
  * - Expand (i, i+1) for even palindromes.
  * - Each time you expand, add substring to the set.
- * - Each expansion is liner in worst case: O(N).
+ * - Each expansion is linear in worst case: O(N).
  * - Total number of centres: 2n.
  * - Use a Set to track all the distinct palindromic substrings.
  *
  * Time Complexity:
  * - O(N^2)
  * Space Complexity:
- * - O(N^3)
+ * - O(N^2) {Number of total palindromic substrings can be O(N^2), NUmber of distinct palindromic substrings can be at most O(N)}
  *
  * Notes:
  * - Instead of generating all the possible substrings O(N^2) and checking each in O(N):
