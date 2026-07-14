@@ -44,7 +44,6 @@
  * - We are doing what a heap already does.
  * - We pay O(N) per merge.
  *
- *
  * Optimal Approach (Used below):
  * - Use the above approach but using a min heap.
  *
