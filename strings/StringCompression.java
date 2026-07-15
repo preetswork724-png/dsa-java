@@ -28,7 +28,7 @@
  * - O(N)
  *
  * Better Approach intuition:
- * - Instead of concatenating characters in the string, dd the operations on a mutable string i.e StringBuffer or StringBuilder.
+ * - Instead of concatenating characters in the string, do the operations on a mutable string i.e StringBuffer or StringBuilder.
  *
  * Time Complexity:
  * - O(N)
