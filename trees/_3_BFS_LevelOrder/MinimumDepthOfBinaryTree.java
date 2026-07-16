@@ -26,8 +26,8 @@
  * Better Approach Intuition:
  * - Use DFS recursion properly.
  * - Key idea:
- *      - If one child id null -> ignore that side.
- *      - Only consider paths that lead to lead nodes.
+ *      - If one child is null -> ignore that side.
+ *      - Only consider paths that lead to leaf nodes.
  *
  * - Why it is still not optimal?
  * - Correctly handles edge cases.
