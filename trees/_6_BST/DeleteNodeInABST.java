@@ -43,79 +43,55 @@
  *
  *
  * Optimal Approach (Used Below):
- * - Use BST property to directly delete node.
- *
+ * - Use BST property + subtree restructuring (merge) to delete node.
  * - Steps:
+ * - 1. Search for node:
+ * -    If key < root → go left
+ * -    If key > root → go right
+ * - 2. If node found:
+ * -    Case 1: No child (leaf)
+ * -    return null
+ * -    Case 2: One child
+ * -    return non-null child
+ * -    Case 3: Two children (MAIN CASE)
+ * -    Store left subtree and right subtree
+ * -    Replace node with LEFT subtree
+ * -    Find rightmost node of LEFT subtree
+ * -    Attach RIGHT subtree to its right
  *
- *   1. Search for node:
- *      - If key < root → go left
- *      - If key > root → go right
- *
- *   2. If node found:
- *
- *      Case 1: No child (leaf)
- *          → return null
- *
- *      Case 2: One child
- *          → return non-null child
- *
- *      Case 3: Two children
- *          → Find inorder successor (smallest in right subtree)
- *          → Replace node value with successor value
- *          → Delete successor from right subtree
- *
- *
- * - Why successor?
- * - Maintains BST property (next greater element)
- *
- * - Alternative:
- * - Use inorder predecessor (largest in left subtree)
- *
+ * - Why This Works?
+ * - Rightmost node of left subtree = maximum element of left subtree
+ * - max(leftSub) < root < all nodes in rightSub
+ * - So attaching right subtree there preserves BST
  *
  * Time Complexity:
  * - O(H) ≈ O(log N) (balanced tree)
  *
  * Space Complexity:
- * - O(H) recursion stack
+ * - O(1)
  *
  *
  * Notes:
- *
- * - Deletion = search + restructure
- *
+ * - Deletion = search + subtree merge
+ * - Instead of replacing values:
+ * - We restructure pointers
  * - Only tricky case:
- *   - Node with TWO children
- *
- * - Successor always lies in right subtree
- *
- *
- * Common mistakes:
- *
- * - Forgetting to delete successor after replacement
- *
- * - Not handling all 3 cases
- *
+ * - Node with TWO children
+ * - Key operation:
+ * - Find rightmost of left subtree
+ * - Common mistakes:
+ * - Forgetting to attach right subtree
+ * - Attaching at wrong position (not rightmost)
  * - Breaking BST property
- *
- *
- * Mental model:
- *
- * - "Replace with next valid node and delete duplicate"
- *
- *
- * Edge cases:
- *
+ * -  Mental model:
+ * - "Bring left subtree up and hang right subtree at its extreme right"
+ * -  Edge cases:
  * - Deleting root node
- *
  * - Node not present → return original tree
- *
  * - Tree with single node
- *
- *
- * Key takeaway:
- *
- * - BST deletion is local restructuring, not rebuilding
- *
+ * - Left subtree exists but has no right child (direct attach case)
+ * -  Key takeaway:
+ * - BST deletion can be done by merging subtrees instead of replacing values.
  */
 
 package trees._6_BST;
@@ -123,11 +99,10 @@ package trees._6_BST;
 import trees.TreeNode;
 
 public class DeleteNodeInABST {
-    public TreeNode deleteNode(TreeNode root, int key) {
-        TreeNode parent = null;
-        TreeNode curr = root;
 
-        // Step 1: Find node
+    public TreeNode deleteNode(TreeNode root, int key) {
+        TreeNode parent = null, curr = root;
+
         while (curr != null && curr.val != key) {
             parent = curr;
 
@@ -135,36 +110,33 @@ public class DeleteNodeInABST {
             else curr = curr.right;
         }
 
-        // Node not found
         if (curr == null) return root;
 
-        // Step 2: Delete node
-        // Case: node has 2 children
         if (curr.left != null && curr.right != null) {
-            TreeNode succParent = curr;
-            TreeNode succ = curr.right;
 
-            // Find inorder successor
-            while (succ.left != null) {
-                succParent = succ;
-                succ = succ.left;
+            TreeNode leftSub = curr.left;
+            TreeNode rightSub = curr.right;
+
+            TreeNode temp = leftSub;
+
+            while (temp.right != null) {
+                temp = temp.right;
             }
 
-            // Replace value
-            curr.val = succ.val;
+            temp.right = rightSub;
 
-            // Now delete successor instead
-            parent = succParent;
-            curr = succ;
+            if (parent == null) return leftSub;
+
+            if (parent.left == curr) parent.left = leftSub;
+            else parent.right = leftSub;
+
+            return root;
         }
 
-        // Now curr has at most ONE child
         TreeNode child = (curr.left != null) ? curr.left : curr.right;
 
-        // Case: deleting root
         if (parent == null) return child;
 
-        // Attach child to parent
         if (parent.left == curr) parent.left = child;
         else parent.right = child;
 
