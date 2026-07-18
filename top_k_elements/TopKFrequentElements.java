@@ -26,7 +26,7 @@
  *
  * Better Approach Intuition:
  * - Map + Sorting.
- * - Use A map to cunt the frequency of number.
+ * - Use A map to count the frequency of number.
  * - Convert the map to a nested list.
  * - Sort the list by frequency of a number.
  * - Fetch the elements from n-k to n-1.
@@ -38,7 +38,6 @@
  *
  * - Why this is still not optimal?
  * - We sort the entire list when we only want the k most frequent numbers
- *
  *
  * Optimal Approach (Used below):
  * - Map + min heap.
