@@ -14,7 +14,7 @@
  * - Find the first index i such that : nums[i] < nums[i+1]
  * - Delete nums[i].
  * - Restart scanning.
- * - If no such index exists iin a scan :
+ * - If no such index exists in a scan :
  * - The number is already non-decreasing.
  * - Delete the last digit.
  * - After all deletions, remove leading zeroes.
